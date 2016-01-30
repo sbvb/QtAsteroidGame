@@ -4,7 +4,7 @@
 #include <QGraphicsScene>
 #include "enemy.h"
 #include <QtMath>
-#include "Game.h"
+#include "game.h"
 #include "time.h"
 #include <QDebug>
 
