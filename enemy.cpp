@@ -6,7 +6,6 @@
 #include "player.h"
 #include "game.h"
 #include <time.h>
-#include "bullet.h"
 #include <QGraphicsTextItem>
 
 #define windowwidth 500
@@ -79,10 +78,6 @@ void Enemy::move()
             Enemy *fusion=new Enemy(rand()%3,static_cast<Enemy*>(colliding_items[i])->m_element+m_element);
             fusion->setPos(x(),y());
             scene()->addItem(fusion);
-            Bullet *bullet1=new Bullet(x(),y(),180); //not converted to radians on porpouse, to generate oblique shot
-            scene()->addItem(bullet1);
-            Bullet *bullet2=new Bullet(x(),y(),270); //not converted to radians on porpouse, to generate oblique shot
-            scene()->addItem(bullet2);
             scene()->removeItem(colliding_items[i]);
             scene()->removeItem(this);
             if (static_cast<Enemy*>(colliding_items[i])->m_symbol)
