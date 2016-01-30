@@ -1,8 +1,8 @@
-#include "Game.h"
+#include "game.h"
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QFont>
-#include "Enemy.h"
+#include "enemy.h"
 #include <QMediaPlayer>
 #include <QBrush>
 #include <QCloseEvent>
