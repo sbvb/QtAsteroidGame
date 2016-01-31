@@ -61,7 +61,7 @@ void Player::mouseMoved(int x, int y)
 {
     m_angle=qAtan((pos().y()+halfplayersize-y)/(x-pos().x()-halfplayersize));
     if (x<pos().x())
-        m_angle=qDegreesToRadians(180.0)+m_angle; //subtracting the angle from 180º to allow shooting to the left
+        m_angle=qDegreesToRadians(180.0)+m_angle; //allows shooting to the left
 }
 
 void Player::spawn()
