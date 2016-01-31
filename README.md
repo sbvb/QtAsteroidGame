@@ -7,7 +7,7 @@ Assignment of Programming Languages Course in Rio de Janeiro Federal University
 
 RESOURCE FILES (MUSIC AND IMAGES) MUST BE DOWNLOADED IN THE SAME FOLDER AS THE SOURCE CODES.
 
-IMAGES:
+# IMAGES:
 
 https://cloud.githubusercontent.com/assets/16602627/12699345/184d0998-c79f-11e5-9602-00e3b5f8d197.png
 
