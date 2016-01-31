@@ -15,6 +15,7 @@
 #define halfplayersize 25
 
 bool isplaying;
+Player *player;
 
 Game::Game(QWidget *parent, int difficulty, int timelimit){
     m_difficulty=difficulty;
@@ -41,7 +42,8 @@ Game::Game(QWidget *parent, int difficulty, int timelimit){
         QObject::connect(timer,SIGNAL(timeout()),counter,SLOT(decrease()));
         timer->start(1000);
     }
-    view=new QGraphicsView(scene);
+    view=new MouseMovimentView();
+    view->setScene(scene);
     QTimer *enemytimer=new QTimer();
     for (int i=0;i<enemiesperspawn;i++)
         QObject::connect(enemytimer,SIGNAL(timeout()),player,SLOT(spawn()));
