@@ -6,6 +6,7 @@
 #include <typeinfo>
 #include "game.h"
 #include <QtMath>
+#include <time.h>
 
 #define bulletwidth 5
 #define bulletheight 5
@@ -25,6 +26,7 @@ Bullet::Bullet(int x, int y, float angle)
     connect(timer,SIGNAL(timeout()),this,SLOT(move()));
     timer->start(50);
     m_angle=angle;
+    srand(time(NULL)); //may be commented out to set a constant scenario
 }
 
 void Bullet::move()
@@ -39,6 +41,46 @@ void Bullet::move()
                 Enemy *fission2=new Enemy(2,1);
                 fission2->setPos(x(),y());
                 scene()->addItem(fission2);
+                Bullet *bullet1; //avoids cross initialization errors
+                Bullet *bullet2; //avoids cross initialization errors
+                switch (rand()%6){
+                    case 0:
+                        bullet1=new Bullet(x(),y(),qDegreesToRadians(90.0));
+                        scene()->addItem(bullet1);
+                        bullet2=new Bullet(x(),y(),qDegreesToRadians(270.0));
+                        scene()->addItem(bullet2);
+                        break;
+                    case 1:
+                        bullet1=new Bullet(x(),y(),qDegreesToRadians(0.0));
+                        scene()->addItem(bullet1);
+                        bullet2=new Bullet(x(),y(),qDegreesToRadians(180.0));
+                        scene()->addItem(bullet2);
+                        break;
+                    case 2:
+                        bullet1=new Bullet(x(),y(),qDegreesToRadians(0.0));
+                        scene()->addItem(bullet1);
+                        bullet2=new Bullet(x(),y(),qDegreesToRadians(90.0));
+                        scene()->addItem(bullet2);
+                        break;
+                    case 3:
+                        bullet1=new Bullet(x(),y(),qDegreesToRadians(0.0));
+                        scene()->addItem(bullet1);
+                        bullet2=new Bullet(x(),y(),qDegreesToRadians(270.0));
+                        scene()->addItem(bullet2);
+                        break;
+                    case 4:
+                        bullet1=new Bullet(x(),y(),qDegreesToRadians(180.0));
+                        scene()->addItem(bullet1);
+                        bullet2=new Bullet(x(),y(),qDegreesToRadians(90.0));
+                        scene()->addItem(bullet2);
+                        break;
+                    case 5:
+                        bullet1=new Bullet(x(),y(),qDegreesToRadians(180.0));
+                        scene()->addItem(bullet1);
+                        bullet2=new Bullet(x(),y(),qDegreesToRadians(270.0));
+                        scene()->addItem(bullet2);
+                        break;
+                }
             }
             game->score->increase();
             scene()->removeItem(colliding_items[i]);
