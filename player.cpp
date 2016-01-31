@@ -6,7 +6,6 @@
 #include <QtMath>
 #include "game.h"
 #include "time.h"
-#include <QDebug>
 
 #define windowwidth 500
 #define windowheight 500
@@ -52,12 +51,17 @@ void Player::keyPressEvent(QKeyEvent *event)
         Bullet *bullet=new Bullet(pos().x(),pos().y(),qDegreesToRadians(0.0));
         scene()->addItem(bullet);
     }
+    else if (event->key()==Qt::Key_Space){
+        Bullet *bullet=new Bullet(pos().x(),pos().y(),m_angle);
+        scene()->addItem(bullet);
+    }
 }
 
-void Player::mouseMoved(int x, int y) //not being called yet
+void Player::mouseMoved(int x, int y)
 {
-    m_angle=qAtan2(y,x);
-    qDebug()<<m_angle;
+    m_angle=qAtan((pos().y()+halfplayersize-y)/(x-pos().x()-halfplayersize));
+    if (x<pos().x())
+        m_angle=qDegreesToRadians(180.0)+m_angle; //subtracting the angle from 180º to allow shooting to the left
 }
 
 void Player::spawn()
