@@ -2,7 +2,7 @@
 #include <QFont>
 #include <QMessageBox>
 
-#define windowwidth 500
+#define windowwidth 485
 
 extern bool isplaying;
 
