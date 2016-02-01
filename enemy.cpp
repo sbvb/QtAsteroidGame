@@ -8,8 +8,8 @@
 #include <time.h>
 #include <QGraphicsTextItem>
 
-#define windowwidth 500
-#define windowheight 500
+#define windowwidth 485
+#define windowheight 485
 #define enemyradius 20
 #define maxinc 10
 #define fixedspeed 3
