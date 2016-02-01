@@ -7,8 +7,8 @@
 #include "game.h"
 #include "time.h"
 
-#define windowwidth 500
-#define windowheight 500
+#define windowwidth 485
+#define windowheight 485
 #define playerspeed 20
 #define halfplayersize 20
 
