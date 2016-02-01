@@ -7,8 +7,8 @@
 #include <QBrush>
 #include <QCloseEvent>
 
-#define windowwidth 500
-#define windowheight 500
+#define windowwidth 485
+#define windowheight 485
 #define timetospawn 3000 //in miliseconds
 #define soundvolume 50
 #define enemiesperspawn 4
@@ -36,7 +36,7 @@ Game::Game(QWidget *parent, int difficulty, int timelimit){
     scene->addItem(health);
     if (m_timelimit!=0){
         Counter *counter=new Counter(0,m_timelimit);
-        counter->setPos(health->x()+380,health->y()-25);
+        counter->setPos(health->x()+365,health->y()-25);
         scene->addItem(counter);
         QTimer *timer=new QTimer();
         QObject::connect(timer,SIGNAL(timeout()),counter,SLOT(decrease()));
