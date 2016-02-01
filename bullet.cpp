@@ -10,8 +10,8 @@
 
 #define bulletwidth 5
 #define bulletheight 5
-#define windowwidth 500
-#define windowheight 500
+#define windowwidth 485
+#define windowheight 485
 #define bulletspeed 20
 #define halfplayersize 25
 
